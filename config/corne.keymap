@@ -10,30 +10,6 @@
 
 / {
     behaviors {
-        HRM_SHIFT_L: HRM_SHIFT_L {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_SHIFT_L";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <6 18 19 7 30 31 39 40 41 32 20 8 9 21 33 34 22 10 11 23 35>;
-        };
-
-        HRM_SHIFT_R: HRM_SHIFT_R {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HRM_SHIFT_R";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-            hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-        };
-
         HRM_R: HRM_R {
             compatible = "zmk,behavior-hold-tap";
             label = "HRM_R";
@@ -109,10 +85,10 @@
 
             display-name = "Sym";
             bindings = <
-&trans  &kp GRAVE        &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS          &kp PIPE         &kp CARET    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp LPAR       &kp UNDERSCORE     &trans
-&trans  &kp EXCLAMATION  &kp ASTERISK   &kp SLASH         &kp EQUAL          &kp AMPERSAND    &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp SEMICOLON  &kp DOUBLE_QUOTES  &trans
-&trans  &kp TILDE        &kp PLUS       &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp PERCENT      &kp AT_SIGN  &kp COLON             &kp COMMA              &kp PERIOD     &kp SQT            &trans
-                                        &trans            &trans             &kp SPACE        &kp RET      &trans                &trans
+&trans  &kp GRAVE                    &kp LESS_THAN             &kp GREATER_THAN           &kp MINUS                &kp PIPE         &kp CARET    &kp LEFT_BRACE                       &kp RIGHT_BRACE                         &kp LPAR                    &kp UNDERSCORE                  &trans
+&trans  &HRM_L LEFT_GUI EXCLAMATION  &HRM_L LEFT_ALT ASTERISK  &HRM_L LEFT_CONTROL SLASH  &HRM_L LEFT_SHIFT EQUAL  &kp AMPERSAND    &kp HASH     &HRM_R RIGHT_SHIFT LEFT_PARENTHESIS  &HRM_R RIGHT_CONTROL RIGHT_PARENTHESIS  &HRM_R RIGHT_ALT SEMICOLON  &HRM_R RIGHT_GUI DOUBLE_QUOTES  &trans
+&trans  &kp TILDE                    &kp PLUS                  &kp LEFT_BRACKET           &kp RIGHT_BRACKET        &kp PERCENT      &kp AT_SIGN  &kp COLON                            &kp COMMA                               &kp PERIOD                  &kp SQT                         &trans
+                                                               &trans                     &trans                   &kp SPACE        &kp RET      &trans                               &trans
             >;
         };
 
