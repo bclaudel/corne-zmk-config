@@ -129,10 +129,10 @@
         navigation_layer {
             display-name = "Nav";
             bindings = <
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3    &bt BT_SEL 4    &none     &none     &kp PAGE_UP    &none      &none   &trans
-&trans      &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans          &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT  &trans  &trans
-&trans      &trans        &trans        &trans            &trans          &trans          &trans    &trans    &kp PAGE_DOWN  &trans     &trans  &trans
-                                        &trans            &trans          &trans          &trans    &trans    &trans
+&trans  &trans        &trans        &trans            &trans          &trans    &none     &none     &kp PAGE_UP    &none      &none   &trans
+&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT  &trans  &trans
+&trans  &trans        &trans        &trans            &trans          &trans    &trans    &trans    &kp PAGE_DOWN  &trans     &trans  &trans
+                                    &trans            &trans          &trans    &trans    &trans    &trans
             >;
 
             label = "Nav";
