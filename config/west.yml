@@ -12,5 +12,8 @@ manifest:
     - name: zmk-auto-layer
       remote: urob
       revision: v0.3
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3
   self:
     path: config
