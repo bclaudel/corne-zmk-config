@@ -73,7 +73,7 @@
             tapping-term-ms = <280>;
             hold-trigger-on-release;
             flavor = "tap-preferred";
-            quick-tap-ms = <200>;
+            quick-tap-ms = <250>;
             require-prior-idle-ms = <150>;
         };
     };
