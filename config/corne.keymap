@@ -10,9 +10,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-&uc {
-    default-mode = <UC_MODE_LINUX>;
-};
+&uc { default-mode = <UC_MODE_LINUX>; };
 
 / {
     behaviors {
@@ -126,8 +124,8 @@
         default_layer {
             display-name = "Base";
             bindings = <
-&kp TAB     &kp Q              &kp W              &kp E           &kp R                &kp T           &kp Y       &kp U                 &kp I           &kp O               &kp P                  &kp BSPC
-&kp ESCAPE  &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LEFT_SHIFT F  &kp G           &kp H       &HRM_R RIGHT_SHIFT J  &HRM_R RCTRL K  &HRM_R RIGHT_ALT L  &HRM_R RIGHT_GUI SEMI  &kp ENTER
+&kp TAB     &kp Q              &kp W              &kp E           &kp R                &kp T           &kp Y       &kp U                 &kp I           &kp O               &kp P                  &kp BACKSLASH
+&kp ESCAPE  &HRM_L LEFT_GUI A  &HRM_L LEFT_ALT S  &HRM_L LCTRL D  &HRM_L LEFT_SHIFT F  &kp G           &kp H       &HRM_R RIGHT_SHIFT J  &HRM_R RCTRL K  &HRM_R RIGHT_ALT L  &HRM_R RIGHT_GUI SEMI  &kp SINGLE_QUOTE
 &tog 1      &kp Z              &kp X              &kp C           &kp V                &kp B           &kp N       &kp M                 &kp COMMA       &kp DOT             &kp FSLH               &sl 5
                                                   &num_word 4     &mo_bspc_del 3 0     &mo_kp 4 TAB    &kp RETURN  &mo_kp 2 SPACE        &caps_word
             >;
