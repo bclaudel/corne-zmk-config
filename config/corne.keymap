@@ -42,8 +42,14 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &comma_inner_morph)
 SIMPLE_MORPH(comma_inner_morph, CTL, &kp SEMICOLON, &kp LESS_THAN)
 
-// Tap: backspace | Shft + tap: delete
+// Tap: backspace | Shft + tap: delete | Hold: sym layer
 SIMPLE_MORPH(bs_del, SFT, &kp BSPC, &kp DEL)
+ZMK_HOLD_TAP(mo_bs,
+             bindings = <&mo>, <&bs_del>;
+             flavor = "tap-preferred";
+             tapping-term-ms = <280>;
+             quick-tap-ms = <250>;
+             require-prior-idle-ms = <150>;)
 
 / {
     behaviors {
