@@ -30,18 +30,8 @@
                hold-trigger-on-release;        \
                hold-trigger-key-positions = <TRIGGER_POS>;)
 
-/* MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs */
-/* MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs */
-
-ZMK_BEHAVIOR(hmr, hold_tap,
-    bindings = <&kp>, <&kp>;
-    flavor = "tap-preferred";
-    tapping-term-ms = <280>;
-    quick-tap-ms = <175>;
-    require-prior-idle-ms = <150>;
-    hold-trigger-on-release;
-    hold-trigger-key-positions = <KEYS_L THUMBS>;
-)
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs
 
 // Define mod-morph with a *single* mod trigger for less repetition
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)       \
