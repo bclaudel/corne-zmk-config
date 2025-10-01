@@ -109,19 +109,23 @@ ZMK_LAYER(Nav,
      //                                              ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
 )
 
+// Symbol layer
+ZMK_LAYER(Sym,
+     // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+          ___            &kp GRAVE      &kp LESS_THAN  &kp GREATER_THAN &kp MINUS    &kp PIPE           &kp CARET      &kp LEFT_BRACE &kp RIGHT_BRACE &kp DOLLAR &kp UNDERSCORE    ___
+     // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+          ___            &hml LGUI EXCLAMATION &hml LALT ASTERISK &hml LCTRL SLASH &hml LSHFT EQUAL &kp AMPERSAND &kp HASH &hmr RSHFT LEFT_PARENTHESIS &hmr RCTRL RIGHT_PARENTHESIS &hmr RALT SEMICOLON &hmr RGUI DOUBLE_QUOTES  ___
+     // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+          ___            &kp TILDE      &kp PLUS       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PERCENT   &kp AT_SIGN    &kp COLON      &kp COMMA      &kp PERIOD     &kp SQT        ___
+     // ╰──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                                                       ___            ___            ___                ___            ___            ___
+     //                                              ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
+)
+
+
 / {
     keymap {
         compatible = "zmk,keymap";
-
-        symbol_layer {
-            display-name = "Sym";
-            bindings = <
-&trans  &kp GRAVE                    &kp LESS_THAN             &kp GREATER_THAN           &kp MINUS                &kp PIPE         &kp CARET    &kp LEFT_BRACE                       &kp RIGHT_BRACE                         &kp DOLLAR                  &kp UNDERSCORE                  &trans
-&trans  &hml LEFT_GUI EXCLAMATION    &hml LEFT_ALT ASTERISK    &hml LEFT_CONTROL SLASH    &hml LEFT_SHIFT EQUAL    &kp AMPERSAND    &kp HASH     &hmr RIGHT_SHIFT LEFT_PARENTHESIS    &hmr RIGHT_CONTROL RIGHT_PARENTHESIS    &hmr RIGHT_ALT SEMICOLON    &hmr RIGHT_GUI DOUBLE_QUOTES  &trans
-&trans  &kp TILDE                    &kp PLUS                  &kp LEFT_BRACKET           &kp RIGHT_BRACKET        &kp PERCENT      &kp AT_SIGN  &kp COLON                            &kp COMMA                               &kp PERIOD                  &kp SQT                         &trans
-                                                               &trans                     &trans                   &trans           &trans       &trans                               &trans
-            >;
-        };
 
         num_layer {
             bindings = <
