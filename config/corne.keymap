@@ -112,11 +112,11 @@ ZMK_LAYER(Nav,
 // Symbol layer
 ZMK_LAYER(Sym,
      // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-          ___            &kp GRAVE      &kp LESS_THAN  &kp GREATER_THAN &kp MINUS    &kp PIPE           &kp CARET      &kp LEFT_BRACE &kp RIGHT_BRACE &kp DOLLAR &kp UNDERSCORE    ___
+          ___            &kp GRAVE      &kp LESS_THAN  &kp GREATER_THAN &kp MINUS    &kp PIPE           &kp CARET      &kp LBRC       &kp RBRC       &kp DOLLAR     &kp UNDERSCORE ___
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-          ___            &hml LGUI EXCLAMATION &hml LALT ASTERISK &hml LCTRL SLASH &hml LSHFT EQUAL &kp AMPERSAND &kp HASH &hmr RSHFT LEFT_PARENTHESIS &hmr RCTRL RIGHT_PARENTHESIS &hmr RALT SEMICOLON &hmr RGUI DOUBLE_QUOTES  ___
+          ___            &hml LGUI EXCL &hml LALT STAR &hml LCTRL SLASH &hml LSHFT EQUAL &kp AMPS       &kp HASH       &hmr RSHFT LPAR &hmr RCTRL RPAR &hmr RALT SEMICOLON &hmr RGUI DOUBLE_QUOTES  ___
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-          ___            &kp TILDE      &kp PLUS       &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp PERCENT   &kp AT_SIGN    &kp COLON      &kp COMMA      &kp PERIOD     &kp SQT        ___
+          ___            &kp TILDE      &kp PLUS       &kp LBKT       &kp RBKT       &kp PERCENT        &kp AT_SIGN    &kp COLON      &kp COMMA      &kp PERIOD     &kp SQT        ___
      // ╰──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                                                        ___            ___            ___                ___            ___            ___
      //                                              ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
