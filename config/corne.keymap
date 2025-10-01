@@ -96,21 +96,22 @@ ZMK_LAYER(Gallium,
      //                                              ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
 )
 
+// Navigation layer
+ZMK_LAYER(Nav,
+     // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+          XXX            XXX            XXX            XXX            XXX            XXX                XXX            XXX            &kp PAGE_UP    XXX            XXX            XXX
+     // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+          XXX            &kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      XXX                &kp LEFT       &kp UP         &kp DOWN       &kp RIGHT      XXX            XXX
+     // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+          XXX            XXX            XXX            XXX            XXX            XXX                XXX            XXX            &kp PAGE_DOWN  XXX            XXX            XXX
+     // ╰──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                                                       ___            ___            ___                ___            ___            ___
+     //                                              ╰──────────────┴──────────────┴──────────────╯   ╰──────────────┴──────────────┴──────────────╯
+)
+
 / {
     keymap {
         compatible = "zmk,keymap";
-
-        navigation_layer {
-            display-name = "Nav";
-            bindings = <
-&trans  &trans        &trans        &trans            &trans          &trans    &none     &none     &kp PAGE_UP    &none      &none   &trans
-&trans  &kp LEFT_GUI  &kp LEFT_ALT  &kp LEFT_CONTROL  &kp LEFT_SHIFT  &trans    &kp LEFT  &kp DOWN  &kp UP         &kp RIGHT  &trans  &trans
-&trans  &trans        &trans        &trans            &trans          &trans    &trans    &trans    &kp PAGE_DOWN  &trans     &trans  &trans
-                                    &trans            &trans          &trans    &trans    &trans    &trans
-            >;
-
-            label = "Nav";
-        };
 
         symbol_layer {
             display-name = "Sym";
