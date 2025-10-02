@@ -19,6 +19,8 @@
 #define NUM 4
 #define SYS 5
 
+#include "combos.dtsi"
+
 #define XXX &none
 #define ___ &trans
 
