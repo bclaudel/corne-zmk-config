@@ -34,7 +34,7 @@
 SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
 
 // Tap: dot | Shift + tap: colon
-SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &COLON)
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 
 // Tap: qmark | Shift + tap: excl
 SIMPLE_MORPH(qexcl, SFT, &kp QMARK, &kp EXCL)
