@@ -27,6 +27,11 @@
 // Initial system for the unicode behavior
 &uc { default-mode = <UC_MODE_LINUX>; };
 
+// Configure caps word behavior
+&caps_word {
+    continue-list = <UNDERSCORE MINUS>;
+};
+
 // Define mod-morph with a *single* mod trigger for less repetition
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)       \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>; \
@@ -47,6 +52,9 @@ SIMPLE_MORPH(bs_del, SFT, &kp BSPC, &kp DEL)
 // Tap: dollar | Shft + tap: euro
 SIMPLE_MORPH(dollar_morph, SFT, &kp DOLLAR, &uc UC_CURR_EURO)
 
+// Tap: slash | Shft + tap: backslash
+SIMPLE_MORPH(slash_morph, SFT, &kp SLASH, &kp BACKSLASH)
+
 // Home row mods
 #define KEYS_L LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5
 #define KEYS_R RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5
@@ -64,6 +72,9 @@ SIMPLE_MORPH(dollar_morph, SFT, &kp DOLLAR, &uc UC_CURR_EURO)
 
 MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs
+
+// Home row mods for the navigation layer
+MAKE_HRM(hml_slash, &kp, &slash_morph, KEYS_R THUMBS)
 
 ZMK_HOLD_TAP(mo_kp,
              bindings = <&mo>, <&kp>;
@@ -110,7 +121,7 @@ ZMK_LAYER(Gallium,
 // Navigation layer
 ZMK_LAYER(Nav,
      // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-          ___            ___            ___            &kp C_VOL_DN   &kp C_VOL_UP      ___                ___            ___            &kp PAGE_UP    ___            ___            ___
+          ___            ___            ___            &kp C_VOL_DN   &kp C_VOL_UP   ___                ___            ___            &kp PAGE_UP    ___            ___            ___
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
           ___            &kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      ___                &kp LEFT       &kp DOWN       &kp  UP        &kp RIGHT      ___            ___
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
@@ -125,7 +136,7 @@ ZMK_LAYER(Sym,
      // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
           ___            &kp GRAVE      &kp LESS_THAN  &kp GREATER_THAN &kp MINUS    &kp PIPE           &kp CARET      &kp LBRC       &kp RBRC       &dollar_morph  &kp UNDERSCORE ___
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-          ___            &hml LGUI EXCL &hml LALT STAR &hml LCTRL SLASH &hml LSHFT EQUAL &kp AMPS       &kp HASH       &hmr RSHFT LPAR &hmr RCTRL RPAR &hmr RALT SEMICOLON &hmr RGUI DOUBLE_QUOTES  ___
+          ___            &hml LGUI EXCL &hml LALT STAR &hml_slash LCTRL 0 &hml LSHFT EQUAL &kp AMPS     &kp HASH       &hmr RSHFT LPAR &hmr RCTRL RPAR &hmr RALT SEMICOLON &hmr RGUI DOUBLE_QUOTES  ___
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
           ___            &kp TILDE      &kp PLUS       &kp LBKT       &kp RBKT       &kp PERCENT        &kp AT_SIGN    &kp COLON      &kp COMMA      &kp PERIOD     &kp SQT        ___
      // ╰──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
