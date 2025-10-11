@@ -21,8 +21,9 @@
 
 #include "combos.dtsi"
 
-#define XXX &none
-#define ___ &trans
+#define XXX  &none
+#define ___  &trans
+#define TMUX &kp LC(B)
 
 // Initial system for the unicode behavior
 &uc { default-mode = <UC_MODE_LINUX>; };
@@ -97,7 +98,7 @@ ZMK_LAYER(Base,
      // ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮   ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
           &kp TAB        &kp Q          &kp W          &kp E          &kp R          &kp T              &kp Y          &kp U          &kp I          &kp O          &kp P          &kp BACKSLASH
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-          &kp ESCAPE     &hml LGUI A    &hml LALT S    &hml LCTRL D   &hml LSHFT F   &kp G              &kp H          &hmr RSHFT J   &hmr RCTRL K   &hmr RALT L    &hmr RGUI SEMI &kp APOS
+          &kp ESCAPE     &hml LGUI A    &hml LALT S    &hml LCTRL D   &hml LSHFT F   &kp G              &kp H          &hmr RSHFT J   &hmr RCTRL K   &hmr RALT L    &hmr RGUI SEMI TMUX
      // ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
           &tog 1         &kp Z          &kp X          &kp C          &kp V          &kp B              &kp N          &kp M          &kp COMMA      &kp DOT        &kp FSLH       &sl 5
      // ╰──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤   ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
