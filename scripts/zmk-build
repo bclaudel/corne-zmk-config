@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+readonly SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+readonly REPO_ROOT="$(cd -- "${SCRIPT_DIR}/.." && pwd)"
+readonly IMAGE="${ZMK_BUILD_IMAGE:-zmkfirmware/zmk-build-arm:stable}"
+
+usage() {
+    cat >&2 <<'EOF'
+Usage: scripts/zmk-build {all|left|right|reset|clean}
+EOF
+}
+
+target="${1:-}"
+if [[ $# -ne 1 ]]; then
+    usage
+    exit 2
+fi
+
+case "${target}" in
+    clean)
+        rm -rf -- "${REPO_ROOT}/.zmk-workspace" "${REPO_ROOT}/firmware"
+        exit 0
+        ;;
+    all|left|right|reset)
+        ;;
+    *)
+        printf 'error: unknown build target %q\n' "${target}" >&2
+        usage
+        exit 2
+        ;;
+esac
+
+if ! command -v docker >/dev/null 2>&1; then
+    echo "error: Docker is required but the 'docker' command was not found." >&2
+    exit 1
+fi
+
+if ! docker info >/dev/null 2>&1; then
+    echo "error: cannot connect to the Docker daemon. Start Docker and check your Docker permissions." >&2
+    exit 1
+fi
+
+mkdir -p \
+    "${REPO_ROOT}/.zmk-workspace" \
+    "${REPO_ROOT}/.zmk-workspace/home" \
+    "${REPO_ROOT}/firmware"
+
+exec docker run --rm \
+    --user "$(id -u):$(id -g)" \
+    --env HOME=/work/home \
+    --volume "${REPO_ROOT}/config:/work/config:ro" \
+    --volume "${REPO_ROOT}/build.yaml:/work/build.yaml:ro" \
+    --volume "${SCRIPT_DIR}/container-build.py:/opt/zmk-local-build.py:ro" \
+    --volume "${REPO_ROOT}/.zmk-workspace:/work" \
+    --volume "${REPO_ROOT}/firmware:/firmware" \
+    --workdir /work \
+    "${IMAGE}" \
+    python3 /opt/zmk-local-build.py "${target}"
